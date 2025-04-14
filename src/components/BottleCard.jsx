@@ -23,27 +23,29 @@ const BottleCard = ({ bottle, handleAddToCart, handleRemoveFromCart }) => {
       <img
         src={img}
         alt={name}
-        className="rounded-xl h-72 2xl:h-80 w-96 mb-3"
+        className="rounded-xl h-72 2xl:h-88 w-96 mb-4"
       />
       <div className="flex flex-col items-start">
-        <h3 className="mb-1">
+        <h3 className="mb-1 text-xl">
           Name&nbsp;&nbsp;:&nbsp;&nbsp;<span className="font-bold">{name}</span>
         </h3>
-        <p className="mb-1">Price&nbsp;&nbsp;:&nbsp;&nbsp;${price}</p>
-        <p className="mb-3">
-          Available&nbsp;&nbsp;:&nbsp;&nbsp;{currentStock} pcs
-        </p>
+        <div className="flex flex-col xl:flex-row xl:justify-between w-full mb-4">
+          <p className="mb-1 xl:mb-0 text-xl">
+            Available&nbsp;&nbsp;:&nbsp;&nbsp;{currentStock} pcs
+          </p>
+          <p className="text-xl">Price&nbsp;&nbsp;:&nbsp;&nbsp;${price}</p>
+        </div>
       </div>
       <div className="flex justify-between">
         <button
           onClick={handleBuyNow}
-          className={`border-[rgba(255,255,255,0.87)] text-[rgba(255,255,255,0.87)] bg-[#242424] w-24 h-10 rounded-lg hover:cursor-pointer border text-sm hover:opacity-70`}
+          className={`border-[rgba(255,255,255,0.87)] text-[rgba(255,255,255,0.87)] bg-[#242424] w-24 h-10 rounded-lg hover:cursor-pointer border text-base hover:opacity-70`}
         >
           Buy Now
         </button>
         <button
           onClick={handleRemove}
-          className={`border-[rgba(255,255,255,0.87)] text-[rgba(255,255,255,0.87)] bg-[#242424] w-24 h-10 rounded-lg hover:cursor-pointer border text-sm hover:opacity-70`}
+          className={`border-[rgba(255,255,255,0.87)] text-[rgba(255,255,255,0.87)] bg-[#242424] w-24 h-10 rounded-lg hover:cursor-pointer border text-base hover:opacity-70`}
         >
           Remove
         </button>

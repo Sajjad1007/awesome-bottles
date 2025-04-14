@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cart = ({ cart }) => {
+const BottleCart = ({ cart }) => {
   return (
     <div className="flex gap-2 flex-wrap min-h-8 ml-2">
       {cart.map((bottle, index) => (
@@ -15,4 +15,4 @@ const Cart = ({ cart }) => {
   );
 };
 
-export default Cart;
+export default BottleCart;

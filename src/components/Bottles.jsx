@@ -1,5 +1,5 @@
 import React, { use, useEffect, useState } from "react";
-import Cart from "./Cart";
+import BottleCart from "./BottleCart";
 import BottleCard from "./BottleCard";
 import {
   addItemIdToLocalStorageCart,
@@ -58,11 +58,11 @@ const Bottles = ({ bottlesPromise }) => {
 
   return (
     <div className="text-center max-w-96 sm:max-w-none mx-auto">
-      <div className="sticky top-0 z-10 bg-[#242424] py-4">
-        <h2 className="text-3xl font-bold mb-3">Total Price : {totalPrice}</h2>
-        <h2 className="text-2xl font-bold flex justify-center items-center max-w-full">
-          <div>Cart&nbsp;:</div>
-          <Cart cart={cart}></Cart>
+      <div className="sticky top-0 z-10 bg-[#242424] py-5">
+        <h2 className="text-4xl font-bold mb-3">Total Price : {totalPrice}</h2>
+        <h2 className="text-3xl font-bold flex justify-center items-center max-w-full">
+          <div>Bottle Cart&nbsp;:</div>
+          <BottleCart cart={cart}></BottleCart>
           <button
             onClick={handleCrossButton}
             className={`border-[rgba(255,255,255,0.87)] text-[rgba(255,255,255,0.87)] bg-[#242424] w-8 h-8 rounded-sm hover:cursor-pointer border text-sm hover:opacity-70 ${
