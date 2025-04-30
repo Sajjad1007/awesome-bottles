@@ -7,6 +7,8 @@ import {
   removeAllFromLocalStorage,
 } from "../utilities/localStorage";
 
+window.onload = removeAllFromLocalStorage();
+
 const Bottles = ({ bottlesPromise }) => {
   const bottles = use(bottlesPromise);
   const [cart, setCart] = useState([]);
@@ -39,7 +41,6 @@ const Bottles = ({ bottlesPromise }) => {
 
   const handleRemoveFromCart = (bottle) => {
     const index = cart.indexOf(bottle);
-    console.log(index);
 
     if (index !== -1) {
       cart.splice(index, 1);
@@ -47,13 +48,11 @@ const Bottles = ({ bottlesPromise }) => {
       setCart(newCart);
       setTotalPrice(totalPrice - bottle.price);
       removeItemIdFromLocalStorage(bottle.id);
-    }
-  };
 
-  const handleCrossButton = () => {
-    setCart([]);
-    setTotalPrice(0);
-    removeAllFromLocalStorage();
+      if (newCart.length === 0) {
+        removeAllFromLocalStorage();
+      }
+    }
   };
 
   return (
@@ -61,16 +60,8 @@ const Bottles = ({ bottlesPromise }) => {
       <div className="sticky top-0 z-10 bg-[#242424] py-5">
         <h2 className="text-4xl font-bold mb-3">Total Price : {totalPrice}</h2>
         <h2 className="text-3xl font-bold flex justify-center items-center max-w-full">
-          <div>Bottle Cart&nbsp;:</div>
+          <div>Bottle Cart : </div>
           <BottleCart cart={cart}></BottleCart>
-          <button
-            onClick={handleCrossButton}
-            className={`border-[rgba(255,255,255,0.87)] text-[rgba(255,255,255,0.87)] bg-[#242424] w-8 h-8 rounded-sm hover:cursor-pointer border text-sm hover:opacity-70 ${
-              cart.length > 0 ? "block ml-2" : "hidden"
-            }`}
-          >
-            X
-          </button>
         </h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 2xl:gap-8 min-w-full mb-4">
