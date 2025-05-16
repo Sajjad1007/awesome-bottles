@@ -1,5 +1,3 @@
-import React from "react";
-
 const BottleCart = ({ cart }) => {
   return (
     <div className="flex gap-2 flex-wrap min-h-8 ml-2">

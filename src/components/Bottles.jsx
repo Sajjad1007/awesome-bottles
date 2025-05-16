@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import BottleCart from "./BottleCart";
 import BottleCard from "./BottleCard";
 import {

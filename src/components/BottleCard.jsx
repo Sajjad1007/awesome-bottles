@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const BottleCard = ({ bottle, handleAddToCart, handleRemoveFromCart }) => {
   const { img, name, price, stock } = bottle;

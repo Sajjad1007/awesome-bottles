@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import Bottles from "./components/Bottles";
+import Bottles from "../components/Bottles";
 
 const fetchBottlesPromise = async (link) => {
   const res = await fetch(link);
@@ -7,10 +7,10 @@ const fetchBottlesPromise = async (link) => {
 };
 
 function App() {
-  const bottlesPromise = fetchBottlesPromise("bottles.json");
+  const bottlesPromise = fetchBottlesPromise("bottlesData.json");
   return (
     <div className="grid place-content-center min-h-screen px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-20 container mx-auto">
-      <Suspense fallback={<h2 className="text-3xl font-bold">Loading...</h2>}>
+      <Suspense fallback={<h2 className="text-4xl font-bold">Loading...</h2>}>
         <Bottles bottlesPromise={bottlesPromise}></Bottles>
       </Suspense>
     </div>
